@@ -16,10 +16,10 @@ char *path_concat(char *path, char *command)
 	if (path == NULL)
 		path = "";
 
-	if (cmd == NULL)
-		cmd = "";
+	if (command == NULL)
+		command = "";
 
-	full_path = malloc(((_strlen(path) + _strlen(cmd)) * sizeof(char)) + 2);
+	full_path = malloc(((_strlen(path) + _strlen(command)) * sizeof(char)) + 2);
 
 	if (full_path == NULL)
 		return (NULL);
@@ -36,9 +36,9 @@ char *path_concat(char *path, char *command)
 		len_path++;
 	}
 
-	while (cmd[len_cmd])
+	while (command[len_cmd])
 	{
-		full_path[len_path + len_cmd] = cmd[len_cmd];
+		full_path[len_path + len_cmd] = command[len_cmd];
 		len_cmd++;
 	}
 
