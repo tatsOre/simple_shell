@@ -1,10 +1,11 @@
-#include "hsh.h"
+#include "simple_shell.h"
 
 /**
  * _strlen - returns the length of a string.
- * @s: string input.
+ * @str: string input.
  * Return: length of an string.
  */
+
 int _strlen(char *str)
 {
 	int length = 0;
@@ -25,26 +26,25 @@ int _strlen(char *str)
 
 char *_strdup(char *str)
 {
-        int i, length;
-        char *new_string;
+	int i, length;
+	char *new_string;
 
-        length = _strlen(str);
+	length = _strlen(str);
 
-        new_string = malloc((length + 1) * sizeof(char));
+	new_string = malloc((length + 1) * sizeof(char));
 
-        if (new_string == NULL)
-                return (NULL);
+	if (new_string == NULL)
+		return (NULL);
 
-        for (i = 0 ; i < length ; i++)
-        {
-                new_string[i] = str[i];
-        }
+	for (i = 0 ; i < length ; i++)
+	{
+		new_string[i] = str[i];
+	}
 
-        new_string[i] = '\0';
+	new_string[i] = '\0';
 
-        return (new_string);
+	return (new_string);
 }
-
 
 /**
  * *_strncmp - compares two strings up to n bytes
@@ -53,14 +53,20 @@ char *_strdup(char *str)
  * @n: number of bytes to compare
  * Return: 0 if both strings are equal, a n or -n if they are not
  */
+
 int _strncmp(char *s1, char *s2, int n)
 {
-        int ch = 0;
+	int ch = 0;
 
-        while (((s1[ch] && s2[ch]) && s1[ch] == s2[ch]) && ch < n)
-                ch++;
-
-        return (s1[ch] - s2[ch]);
+	while (s1[ch] && s2[ch] && ch < n)
+	{
+		if (s1[ch] != s2[ch])
+		{
+			return (s1[ch] - s2[ch]);
+		}
+		ch++;
+	}
+	return (0);
 }
 
 
@@ -70,12 +76,13 @@ int _strncmp(char *s1, char *s2, int n)
  * @s2: second string
  * Return: 0 if both strings are equal, a n or -n if they are not
  */
+
 int _strcmp(char *s1, char *s2)
 {
-        int ch = 0;
+	int ch = 0;
 
-        while ((s1[ch] && s2[ch]) && s1[ch] == s2[ch])
-                ch++;
+	while ((s1[ch] && s2[ch]) && s1[ch] == s2[ch])
+		ch++;
 
-        return (s1[ch] - s2[ch]);
+	return (s1[ch] - s2[ch]);
 }

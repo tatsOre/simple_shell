@@ -1,14 +1,14 @@
-#include "hsh.h"
+#include "simple_shell.h"
 
 /**
- * *path_concat - function that concatenates PATH and CMD
+ * path_concat - function that concatenates PATH and CMD
  * @path: PATH
  * @command: command to concatenate to PATH
  * Return: pointer to a PATH newly string
  * return NULL on failure
  */
 
-char *path_concat(char *path, char *cmd)
+char *path_concat(char *path, char *command)
 {
 	int len_path = 0, len_cmd = 0;
 	char *full_path;
@@ -38,13 +38,11 @@ char *path_concat(char *path, char *cmd)
 
 	while (cmd[len_cmd])
 	{
-		full_path[len_path + len_cmd] = cmd[len_path];
-		len_cmd;
+		full_path[len_path + len_cmd] = cmd[len_cmd];
+		len_cmd++;
 	}
 
 	full_path[len_path + len_cmd] = '\0';
-
-	printf("el size de full_path es: %i *check*\n", len_path + len_cmd);
 
 	return (full_path);
 }
