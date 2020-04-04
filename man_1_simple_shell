@@ -1,0 +1,56 @@
+.TH Simple Shell 1 "March 20" "version 1.0" "simple_shell man page"
+.SH NAME
+Name - TEXT
+.SH SYNOPSIS
+#include "simple_shell.h"
+
+.SH DESCRIPTION
+
+.I
+.SS SUBTITLE FORMAT
+.RS
+
+PARAGRAPH
+
+.IP mini subtitle format
+
+Paragraph
+
+.I
+.SS SUBTITLE FORMAT
+.RS
+
+.IP Mini Subtitle Format
+
+Paragraph
+
+.SH GRAND TITLE FORMAT
+.RS
+
+Paragraph
+
+.SH EXAMPLES:
+.RS
+.SS --------------
+.I
+.SS Example 0
+.RS
+.SS --------------
+.SS Input         _printf("This is a char: [%c]", 'C');
+.SS Output	     This is a char: [C]
+.SS --------------
+.I
+.SS Example 1
+.RS
+.SS --------------
+.SS Input	 _printf("Let's try to printf a simple sentence");
+.SS Output	   Let's try to printf a simple sentence
+.SS --------------
+.RE
+
+.SH SEE ALSO
+.I man sh
+.SH BUGS
+Report bugs to Maria Fernanda Crespo Martinez (maria.crespo@holbertonschool.com) or Tatiana Orejuela (tatiana.orejuela@holbertonschool.com)
+.SH AUTHORS
+Maria Fernanda Crespo Martinez, Tatiana Orejuela.
