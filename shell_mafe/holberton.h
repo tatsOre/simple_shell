@@ -43,7 +43,5 @@ char *strconcat(char *s1, char *s2);
 void equal_sign(char **s);
 void printfnum(int loops);
 void sig_out(int sign);
-int _atoi(char *s);
-char *_strdup(char *s);
 
 #endif
