@@ -41,8 +41,8 @@ int main(__attribute__((unused)) int argc, char **argv)
 				write(STDOUT_FILENO, "\n", 1);
 			exit(EXIT_FAILURE);
 		}
-		count = countargs(buffer);
-		args = parser(buffer, count);
+		count = countarg(buffer);
+		args = _parser(buffer, count);
 		if (strcmp(args[0], "exit") == 0 &&
 				(strlen(args[0]) == strlen("exit")))
 		{
@@ -51,11 +51,11 @@ int main(__attribute__((unused)) int argc, char **argv)
 		}
 		else if (args != NULL && args[0] != NULL)
 		{
-			if (interpreter(args) == -1)
+			if (translate(args) == -1)
 				errmess(argv, args, loops);
 		}
-		free(buffer);
-		free(args);
+		free_function(1, buffer);
+		free_function(2, args);
 	}
 	loops++;
 	return (0);
