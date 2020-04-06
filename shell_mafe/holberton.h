@@ -32,7 +32,6 @@ void errmess(char **argv, char **args, int loops);
 int translate(char **args);
 void free_function(int n, ...);
 int _strcmp(char *s1, char *s2);
-int _strlen(char *s);
 int searchdir(char **command, char **args);
 int searchbuiltin(char **args);
 int print_env(void);
