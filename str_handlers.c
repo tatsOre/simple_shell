@@ -1,4 +1,4 @@
-#include "simple_shell.h"
+#include "holberton.h"
 
 /**
  * _strlen - returns the length of a string.
@@ -85,4 +85,24 @@ int _strcmp(char *s1, char *s2)
 		ch++;
 
 	return (s1[ch] - s2[ch]);
+}
+
+/**
+ * *_strcpy - Copy the string pointed to by src, including null byte (\0),
+ * @dest: destination
+ * @src: source
+ * Return: dest
+ */
+char *_strcpy(char *dest, char *src)
+{
+	int length = 0;
+
+	while (src[length] != '\0')
+	{
+		dest[length] = src[length];
+		length++;
+	}
+	dest[length] = '\0';
+
+	return (dest);
 }
