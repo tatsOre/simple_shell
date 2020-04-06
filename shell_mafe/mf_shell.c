@@ -43,8 +43,8 @@ int main(__attribute__((unused)) int argc, char **argv)
 		}
 		count = countarg(buffer);
 		args = _parser(buffer, count);
-		if (strcmp(args[0], "exit") == 0 &&
-				(strlen(args[0]) == strlen("exit")))
+		if (_strcmp(args[0], "exit") == 0 &&
+				(_strlen(args[0]) == _strlen("exit")))
 		{
 			if (exitfunc(args, buffer) == -1)
 				errmess(argv, args, loops);
