@@ -1,0 +1,4 @@
+1c1
+< ./hsh: 1: /bin/l: not found
+---
+> ./hsh: : /bin/l: not found
