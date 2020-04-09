@@ -1,9 +1,9 @@
 #include "simple_shell.h"
 
 /**
- * _strlen - returns the length of a string.
- * @str: string input.
- * Return: length of an string.
+ * _strlen - Counts the number of characters in an array of characters
+ * @str: string
+ * Return: length of the array characters
  */
 
 int _strlen(char *str)
@@ -12,21 +12,63 @@ int _strlen(char *str)
 
 	while (str[length] != '\0')
 		length++;
-
 	return (length);
+}
+
+/**
+ * _strcmp - Compares the value of chars in two different strings 1 by 1
+ * @s1: first string
+ * @s2: second string
+ * Return: difference between the value in the strings
+ */
+int _strcmp(char *s1, char *s2)
+{
+	int difference = 0, index = 0;
+
+	while (s1[index] != '\0' && s2[index] != '\0')
+	{
+		difference = s1[index] - s2[index];
+		if (difference != 0)
+			break;
+		index++;
+	}
+	return (difference);
+}
+
+
+/**
+ * *_strncmp - Compares two strings up to n bytes
+ * @s1: first string
+ * @s2: second string
+ * @n: number of bytes to compare
+ * Return: 0 if both strings are equal, a n or -n if they are not
+ */
+
+int _strncmp(char *s1, char *s2, int n)
+{
+	int difference = 0, index = 0;
+
+	while ((s1[index] != '\0' && s2[index] != '\0') && index < n)
+	{
+		difference = s1[index] - s2[index];
+		if (difference != 0)
+			break;
+		index++;
+	}
+	return (difference);
 }
 
 /**
  * *_strdup - returns a pointer to a newly allocated space in memory,
  * which contains a copy of the string given as a parameter.
- * @str: string to duplicate.
+ * @str: string to duplicate
  * Return: pointer to a new string which is a duplicate of the string,
  * NULL if str = NULL, NULL if insufficient memory was available
  */
 
 char *_strdup(char *str)
 {
-	int i, length;
+	int index, length;
 	char *new_string;
 
 	length = _strlen(str);
@@ -36,53 +78,11 @@ char *_strdup(char *str)
 	if (new_string == NULL)
 		return (NULL);
 
-	for (i = 0 ; i < length ; i++)
+	for (index = 0 ; index < length ; index++)
 	{
-		new_string[i] = str[i];
+		new_string[index] = str[index];
 	}
-
-	new_string[i] = '\0';
+	new_string[index] = '\0';
 
 	return (new_string);
-}
-
-/**
- * *_strncmp - compares two strings up to n bytes
- * @s1: first string
- * @s2: second string
- * @n: number of bytes to compare
- * Return: 0 if both strings are equal, a n or -n if they are not
- */
-
-int _strncmp(char *s1, char *s2, int n)
-{
-	int ch = 0;
-
-	while (s1[ch] && s2[ch] && ch < n)
-	{
-		if (s1[ch] != s2[ch])
-		{
-			return (s1[ch] - s2[ch]);
-		}
-		ch++;
-	}
-	return (0);
-}
-
-
-/**
- * *_strcmp - compares two strings
- * @s1: first string
- * @s2: second string
- * Return: 0 if both strings are equal, a n or -n if they are not
- */
-
-int _strcmp(char *s1, char *s2)
-{
-	int ch = 0;
-
-	while ((s1[ch] && s2[ch]) && s1[ch] == s2[ch])
-		ch++;
-
-	return (s1[ch] - s2[ch]);
 }
