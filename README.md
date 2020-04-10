@@ -52,19 +52,24 @@ $
 * [free (man 3 free)](https://linux.die.net/man/3/free)
 
 ### Libraries
-| [stdarg.h](https://en.wikipedia.org/wiki/Stdarg.h) | [signal.h](https://en.wikipedia.org/wiki/C_signal_handling) |
-| [unistd.h](https://en.wikipedia.org/wiki/Unistd.h) | [sys/wait.h](https://pubs.opengroup.org/onlinepubs/009695399/basedefs/sys/wait.h.html) |
-| [stdlib.h](https://es.wikipedia.org/wiki/Stdlib.h) | [sys/stat.h](https://pubs.opengroup.org/onlinepubs/007908799/xsh/sysstat.h.html) |
+[stdarg.h](https://en.wikipedia.org/wiki/Stdarg.h) | [signal.h](https://en.wikipedia.org/wiki/C_signal_handling) |
+[unistd.h](https://en.wikipedia.org/wiki/Unistd.h) | [sys/wait.h](https://pubs.opengroup.org/onlinepubs/009695399/basedefs/sys/wait.h.html) | [stdlib.h](https://es.wikipedia.org/wiki/Stdlib.h) | [sys/stat.h](https://pubs.opengroup.org/onlinepubs/007908799/xsh/sysstat.h.html)
 
 ### Files
-| File  | Description || File  | Description |
-| :---: | :---:  || :---: | :---:  |
-| `simple_shell.h` | Libraries, declarations. || `builtin.c` | Search and init built-ins |
-| `errormessages.c` | Messages Handlers || `execute.c` | Create and execute processes |
-| `freeall.c` | Free memory || `getenv.c` | Get environment variables |
-| `pathappend.c` | Append program to its path || `searchinit.c` | Execute local programs, redirect commands |
-| `searchpathfile.c` | Search and validate file paths || `splitarguments.c` | Count arguments and breaks them into tokens |
-| `str_handlers.c` | String Handlers Funcs || `hsh.c` | Main Function |
+| File  | Description |
+| :-------: | :-------:  |
+| `simple_shell.h` | Libraries, declarations. |
+| `builtin.c` | Search and init built-ins |
+| `errormessages.c` | Messages Handlers |
+| `execute.c` | Create and execute processes |
+| `freeall.c` | Free memory |
+| `getenv.c` | Get environment variables |
+| `pathappend.c` | Append program to its path |
+| `searchinit.c` | Execute local programs, redirect commands |
+| `searchpathfile.c` | Search and validate file paths |
+| `splitarguments.c` | Count arguments and breaks them into tokens |
+| `str_handlers.c` | String Handlers Funcs |
+| `hsh.c` | Main Function |
 
 ### Compilation
 Code files must be compiled this way:
