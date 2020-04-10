@@ -57,14 +57,14 @@ $
 | [stdlib.h](https://es.wikipedia.org/wiki/Stdlib.h) | [sys/stat.h](https://pubs.opengroup.org/onlinepubs/007908799/xsh/sysstat.h.html) |
 
 ### Files
-| File  | Description |
-| :---: | :---:  |
-| `simple_shell.h` | Libraries, declarations. | `builtin.c` | Search and init built-ins |
-| `errormessages.c` | Messages Handlers | `execute.c` | Create and execute processes |
-| `freeall.c` | Free memory | `getenv.c` | Get environment variables |
-| `pathappend.c` | Append program to its path | `searchinit.c` | Execute local programs, redirect commands |
-| `searchpathfile.c` | Search and validate file paths | `splitarguments.c` | Count arguments and breaks them into tokens |
-| `str_handlers.c` | String Handlers Funcs | `hsh.c` | Main Function |
+| File  | Description || File  | Description |
+| :---: | :---:  || :---: | :---:  |
+| `simple_shell.h` | Libraries, declarations. || `builtin.c` | Search and init built-ins |
+| `errormessages.c` | Messages Handlers || `execute.c` | Create and execute processes |
+| `freeall.c` | Free memory || `getenv.c` | Get environment variables |
+| `pathappend.c` | Append program to its path || `searchinit.c` | Execute local programs, redirect commands |
+| `searchpathfile.c` | Search and validate file paths || `splitarguments.c` | Count arguments and breaks them into tokens |
+| `str_handlers.c` | String Handlers Funcs || `hsh.c` | Main Function |
 
 ### Compilation
 Code files must be compiled this way:
