@@ -84,5 +84,5 @@ url flowcharts
 * Maria Fernanda Crespo Martinez | [Github](https://github.com/mfcrespo)
 * Tatiana Orejuela Zapata | [Github](https://github.com/tatsOre)
 
-##### Foundations - Low-level programming & Algorithm  Linux and Unix system programming.
-#####  April, 2020.
+##### Holberton School - Foundations - Low-level programming & Algorithm  Linux and Unix system programming.
+#####  April, 2020. Cali, Colombia.
