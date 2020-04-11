@@ -1,11 +1,16 @@
 # Simple Shell
-###  Simple recreation of the command-line interpreter Shell
-Program that allows the entering of simple commands or program files and then executes them to the operating system. All files are written in C language.  
+###  Simple replication of the command-line interpreter Shell
+Program that replicates core functionalities of the sh shell. All files are written in C language.   
 
 ### Overview:
 The shell is a command that reads lines from either a file or the terminal, interprets them, and generally executes other commands.  It is the program that is running when a user logs into the system (although a user can select a different shell with the chsh(1) command).  The shell implements a language that has flow control constructs, a macro facility that provides a variety of features in addition to data storage, along with built in history and line editing capabilities. [dash(1) - Linux man page](https://linux.die.net/man/1/dash)
 
-### Features: 
+### Compilation:
+Code files must be compiled this way:
+```bash
+$ gcc -Wall -Werror -Wextra -pedantic *.c -o hsh
+```
+### Usage: 
 The Simple Shell should work like this in interactive mode (simple commands can be typed directly to the running shell):
 ```bash
 $ ./hsh
@@ -29,12 +34,12 @@ hsh main.c shell.c test_ls_2
 hsh main.c shell.c test_ls_2
 $
 ```
-### Resources
+### Resources:
 * [Everything you need to know to start coding your own shell](https://intranet.hbtn.io/concepts/64)
 * [Thompson shell](https://en.wikipedia.org/wiki/Thompson_shell)
 * [Unix shell](https://en.wikipedia.org/wiki/Unix_shell)
 
-### Requirements
+### Requirements:
 * Allowed editors: vi, vim, emacs
 * All your files will be compiled on Ubuntu 14.04 LTS
 * Your C programs and functions will be compiled with gcc 4.8.4 using the flags -Wall -Werror -Wextra and -pedantic
@@ -46,16 +51,16 @@ $
 * All your header files should be include guarded
 * Use system calls only when you need to [why?](https://www.quora.com/Why-are-system-calls-expensive-in-operating-systems)
 
-### Functions and macros
+### Functions and macros:
 * [write (man 2 write)](https://linux.die.net/man/2/write)
 * [malloc (man 3 malloc)](https://linux.die.net/man/3/malloc)
 * [free (man 3 free)](https://linux.die.net/man/3/free)
 
-### Libraries
+### Libraries:
 [stdarg.h](https://en.wikipedia.org/wiki/Stdarg.h) | [signal.h](https://en.wikipedia.org/wiki/C_signal_handling) |
 [unistd.h](https://en.wikipedia.org/wiki/Unistd.h) | [sys/wait.h](https://pubs.opengroup.org/onlinepubs/009695399/basedefs/sys/wait.h.html) | [stdlib.h](https://es.wikipedia.org/wiki/Stdlib.h) | [sys/stat.h](https://pubs.opengroup.org/onlinepubs/007908799/xsh/sysstat.h.html)
 
-### Files
+### Files:
 | File  | Description |
 | :-------: | :-------:  |
 | `simple_shell.h` | Libraries, declarations. |
@@ -71,15 +76,11 @@ $
 | `str_handlers.c` | String Handlers Funcs |
 | `hsh.c` | Main Function |
 
-### Compilation
-Code files must be compiled this way:
-```bash
-$ gcc -Wall -Werror -Wextra -pedantic *.c -o hsh
-```
-### Flowcharts
+
+### Flowcharts:
 url flowcharts
 
-### Authors
+### Authors:
 * Maria Fernanda Crespo Martinez | [Github](https://github.com/mfcrespo)
 * Tatiana Orejuela Zapata | [Github](https://github.com/tatsOre)
 
