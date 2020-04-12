@@ -7,6 +7,27 @@
  */
 int init_fileprogram(char **args)
 {
+/*	struct stat sb;
+
+	if (args[0][0] == '.' && args[0][1] == '/')
+	{
+		if (stat(args[0], &sb) == 0 && access(args[0], X_OK) == 0)
+		{
+			execute(args);
+		}
+		else
+		{
+			perror("hsh");
+			return (1);
+		}
+	}
+	getpathfile(args);
+
+	if (stat(args[0], &sb) == -1)
+		return (-1);
+
+	return (execute(args));
+*/
 	struct stat sb;
 
 	if (stat(args[0], &sb) == 0 && access(args[0], X_OK) == 0)

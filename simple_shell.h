@@ -1,7 +1,7 @@
 #ifndef SIMPLE_SHELL_H
 #define SIMPLE_SHELL_H
 
-#define BUFFSIZE 1024
+#define BUFFSIZE 64
 #define DELIMITER " :\n\t\r"
 #define  _GNU_SOURCE
 
@@ -15,6 +15,7 @@
 #include <sys/wait.h>
 #include <sys/stat.h>
 #include <fcntl.h>
+#include <errno.h>
 
 /*global environment variable */
 extern char **environ;
