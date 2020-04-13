@@ -3,10 +3,8 @@
 Program that replicates core functionalities of the sh shell. All files are written in C language.
 
 ### Overview:
-The shell is a command that reads lines from either a file or the terminal, interprets them, and generally executes other commands.  It is the program that i\
-s running when a user logs into the system (although a user can select a different shell with the chsh(1) command).  The shell implements a language that has\
- flow control constructs, a macro facility that provides a variety of features in addition to data storage, along with built in history and line editing capa\
-bilities. [dash(1) - Linux man page](https://linux.die.net/man/1/dash)
+The shell is a command that reads lines from either a file or the terminal, interprets them, and generally executes other commands.  It is the program that is running when a user logs into the system (although a user can select a different shell with the chsh(1) command).
+The shell implements a language that has flow control constructs, a macro facility that provides a variety of features in addition to data storage, along with built in history and line editing capabilities. [dash(1) - Linux man page](https://linux.die.net/man/1/dash)
 
 ### Compilation:
 Code files must be compiled this way:
