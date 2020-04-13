@@ -3,6 +3,7 @@
 Name - TEXT prueba
 .SH SYNOPSIS
 #include "simple_shell.h"
+command-line interpreter Shell
 
 .SH DESCRIPTION
 
