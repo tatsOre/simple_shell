@@ -11,11 +11,11 @@ int main(int argc, char **argv)
 {
 	char *buffer, **args;
 	size_t len;
-	int loops = 1, fd;
-	(void)argc;
+	int loops = 1, fd, ret = 0, interactive = 1;
+/*	(void)argc; */
 
 	signal(SIGINT, sighandle);
-
+	isatty(STDIN_FILENO) == 0 ? interactive = 0 : interactive;
 	while (1)
 	{
 		buffer = NULL, args = NULL;
@@ -23,12 +23,12 @@ int main(int argc, char **argv)
 
 		if (isatty(STDIN_FILENO))
 			write(STDOUT_FILENO, "$ ", 2);
-
+		fflush(stdin);
 		if (getline(&buffer, &len, stdin) == EOF)
 		{
-			if (isatty(STDIN_FILENO))
+			if (isatty(STDIN_FILENO) && interactive == 1)
 				write(STDOUT_FILENO, "\n", 1);
-			exit(EXIT_FAILURE);
+			/*	exit(127); */ return (0); /* esto retorna */
 		}
 		args = get_tokens(buffer);
 		if (args != NULL && args[0] != NULL)
@@ -37,11 +37,29 @@ int main(int argc, char **argv)
 				continue;
 
 			if (init_fileprogram(args) == -1)
+			{
 				errmess(argv, args, loops);
+				ret = 127;
+			}
+		}
+		else
+		{
+			if (argc > 1)
+			{
+				printf("%s \n", argv[0]);
+				FILE *file = fopen(argv[0], "r");
+				if (file == NULL)
+				{
+					perror("hsh");
+					exit(127);
+				}
+				exit(2);
+				return (2);
+			}
 		}
 		free_function(1, buffer);
 		free_function(2, args);
 		loops++;
 	}
-	return (0);
+	return (ret);
 }

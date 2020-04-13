@@ -21,20 +21,17 @@ int _strlen(char *str)
  * @s2: second string
  * Return: difference between the value in the strings
  */
+
 int _strcmp(char *s1, char *s2)
 {
-	int difference = 0, index = 0;
+	int ch = 0;
 
-	while (s1[index] != '\0' && s2[index] != '\0')
+	while ((s1[ch] != '\0' && s2[ch] != '\0') && s1[ch] == s2[ch])
 	{
-		difference = s1[index] - s2[index];
-		if (difference != 0)
-			break;
-		index++;
+		ch++;
 	}
-	return (difference);
+	return (s1[ch] - s2[ch]);
 }
-
 
 /**
  * *_strncmp - Compares two strings up to n bytes

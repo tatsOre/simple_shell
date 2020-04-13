@@ -1,0 +1,107 @@
+#!/bin/bash
+
+echo -e "\n################################ CASE 1 ##############################\n"
+
+CASE1="/bin/ls"
+echo "/bin/ls" | /bin/sh > ../original
+echo "/bin/ls" | ./hsh > ../yourShell
+diff ../original ../yourShell > ../Task3S1
+rm ../original
+rm ../yourShell
+if [ -s ../Task3S1 ]
+then
+	printf "error on '/bin/ls' command\n"
+else
+	rm -rf ../Task3S1
+	printf "Success on '/bin/ls' command\n"
+fi
+
+echo -e "\n################################ CASE 2 ##############################\n"
+
+CASE2="/bin/l"
+echo "./hsh: 1: /bin/l: not found" > ../original
+echo "/bin/l" | ./hsh 2> ../yourShell
+diff ../original ../yourShell > ../Task3S2
+rm ../original
+rm ../yourShell
+if [ -s ../Task3S2 ]
+then
+	printf "error on '/bin/ls' command\n"
+else
+	rm -rf ../Task3S2
+	printf "Success on '/bin/ls' command\n"
+fi
+
+echo -e "\n################################ CASE 3 ##############################\n"
+
+CASE3="STDERR checks the correct error"
+echo "./././hsh: 1: /bin/l: not found" > ../original
+echo "/bin/l" | ./././hsh 2> ../yourShell
+diff ../original ../yourShell > ../Task3S3
+rm ../original
+rm ../yourShell
+if [ -s ../Task3S3 ]
+then
+	printf "Wrong error\n"
+else
+	rm -rf ../logs/logs_2
+	printf "Correct error\n"
+
+fi
+
+echo -e "\n################################ CASE 4 ##############################\n"
+
+CASE4="Double ls"
+touch ../test_ls_2
+echo -e "/bin/ls\n/bin/ls" > ../test_ls_2
+
+cat ../test_ls_2 | /bin/sh > ../original
+cat ../test_ls_2 | ./hsh > ../yourShell
+diff ../original ../yourShell > ../Task3S4
+rm ../original
+rm ../yourShell
+if [ -s ../Task3S4 ]
+then
+	printf "Doesn't work when use double ls\n"
+else
+	rm -rf ../Task3S4
+	rm -rf ../test_ls_2
+	printf "Works when use double ls\n"
+
+fi
+
+echo -e "\n################################ CASE 5 ##############################\n"
+
+CASE5="STDERR correct ouput"
+echo "127" > ../original
+echo "ks" | ./hsh 2> /dev/null
+echo $? > ../yourShell
+if ! diff -q ../original ../yourShell &>/dev/null;
+then
+        echo "Expected output: " ;cat ../original
+        echo "Result output: " ;cat ../yourShell
+	rm ../original
+	rm ../yourShell
+        printf "When_try_to_get_the_error_of_a_command_does_not_works\n"
+else
+        rm -rf ../logs/logs_3
+        printf "When_try_to_get_the_error_of_a_command_works\n"
+fi
+
+echo -e "\n################################ CASE 6 ##############################\n"
+
+CASE6="Exit_status_when_directory_doesnt_exits_echo_/bin/ls_asd"
+echo "2" > ../original
+echo "/bin/ls asdf" | ./hsh 2> /dev/null
+echo $? > ../yourShell
+
+if ! diff ../original ../yourShell
+then
+output=$(cat ../yourShell)
+        printf "Expected exit status : 2\n"
+	printf "Actual exit status: ${output}\n"
+else
+        printf "Exit_status_when_directory_doesnt_exits_echo_/bin/ls_asd\n"
+fi
+rm ../original
+rm ../yourShell

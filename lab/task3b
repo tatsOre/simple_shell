@@ -1,0 +1,107 @@
+#!/bin/bash
+
+echo -e "\n################## CASE 1 ##################\n"
+
+printf "/bin/ls\n\n"
+echo "/bin/ls" | /bin/sh > ../original
+echo "/bin/ls" | ./hsh > ../yourShell
+diff ../original ../yourShell > ../Task3S1
+rm ../original
+rm ../yourShell
+if [ -s ../Task3S1 ]
+then
+	printf "error on '/bin/ls' command\n"
+else
+	rm -rf ../Task3S1
+	printf "Success on '/bin/ls' command\n"
+fi
+
+echo -e "\n################## CASE 2 ##################\n"
+
+printf ="/bin/l\n\n"
+echo "./hsh: 1: /bin/l: not found" > ../original
+echo "/bin/l" | ./hsh 2> ../yourShell
+diff ../original ../yourShell > ../Task3S2
+rm ../original
+rm ../yourShell
+if [ -s ../Task3S2 ]
+then
+	printf "Message error is NOT the expected one\n"
+else
+	rm -rf ../Task3S2
+	printf "Message error is the expected one\n"
+fi
+
+echo -e "\n################## CASE 3 ##################\n"
+
+printf ="STDERR checks the correct error\n\n"
+echo "./././hsh: 1: /bin/l: not found" > ../original
+echo "/bin/l" | ./././hsh 2> ../yourShell
+diff ../original ../yourShell > ../Task3S3
+rm ../original
+rm ../yourShell
+if [ -s ../Task3S3 ]
+then
+	printf "Wrong error\n\n"
+else
+	rm -rf ../logs/logs_2
+	printf "Correct error\n"
+
+fi
+
+echo -e "\n################## CASE 4 ##################\n"
+
+printf "Double ls\n\n"
+touch ../test_ls_2
+echo -e "/bin/ls\n/bin/ls" > ../test_ls_2
+
+cat ../test_ls_2 | /bin/sh > ../original
+cat ../test_ls_2 | ./hsh > ../yourShell
+diff ../original ../yourShell > ../Task3S4
+rm ../original
+rm ../yourShell
+if [ -s ../Task3S4 ]
+then
+	printf "Doesn't work when use double ls\n\n"
+else
+	rm -rf ../Task3S4
+	rm -rf ../test_ls_2
+	printf "Works when use double ls\n"
+
+fi
+
+echo -e "\n################## CASE 5 ##################\n"
+
+printf "STDERR correct ouput\n\n"
+echo "127" > ../original
+echo "prueba" | ./hsh 2> ../Task3S5
+echo $? > ../yourShell
+if ! diff -q ../original ../yourShell &>../Task3S5;
+then
+        echo "Expected error: " ;cat ../original
+        echo "Your error: " ;cat ../yourShell
+	rm ../original
+	rm ../yourShell
+        printf "\nNot the expected error of a command\n"
+else
+        rm -rf ../logs/logs_3
+        printf "\nThe expected error of a command\n"
+fi
+
+echo -e "\n################## CASE 6 ##################\n"
+
+printf "Exit when a directory doesn't exist /bin/ls prueba\n\n"
+echo "2" > ../original
+echo "/bin/ls prueba" | ./hsh 2> ../Task3S6
+echo $? > ../yourShell
+
+if ! diff ../original ../yourShell
+then
+output=$(cat ../yourShell)
+        printf "\nExpected exit status : 2\n"
+	printf "\nActual exit status: ${output}\n"
+else
+        printf "Expected exit /bin/ls prueba\n"
+fi
+rm ../original
+rm ../yourShell

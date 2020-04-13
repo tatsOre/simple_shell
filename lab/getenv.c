@@ -3,7 +3,7 @@
 /**
  * _getenv - Search in environment variable to find a specific variable name
  * @name: environment variable
- * Return: pointer to the corresponding value string
+ * Return: pointer to the corresponding value string or NULL if it fails
  */
 char *_getenv(char *name)
 {
