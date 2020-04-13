@@ -10,7 +10,7 @@ Code files must be compiled this way:
 ```bash
 $ gcc -Wall -Werror -Wextra -pedantic *.c -o hsh
 ```
-### Usage: 
+### Usage:
 The Simple Shell should work like this in interactive mode (simple commands can be typed directly to the running shell):
 ```bash
 $ ./hsh
