@@ -5,10 +5,19 @@ Program that replicates core functionalities of the sh shell. All files are writ
 ### Overview:
 The shell is a command that reads lines from either a file or the terminal, interprets them, and generally executes other commands.  It is the program that is running when a user logs into the system (although a user can select a different shell with the chsh(1) command).  The shell implements a language that has flow control constructs, a macro facility that provides a variety of features in addition to data storage, along with built in history and line editing capabilities. [dash(1) - Linux man page](https://linux.die.net/man/1/dash)
 
+<<<<<<< HEAD
 ### Flow Chart:
 [Flow Chart](https://www.draw.io/)
 
 ### Features: 
+=======
+### Compilation:
+Code files must be compiled this way:
+```bash
+$ gcc -Wall -Werror -Wextra -pedantic *.c -o hsh
+```
+### Usage:
+>>>>>>> f441d6e58c368f86968d7e4e5d7e8d5660c4d8f5
 The Simple Shell should work like this in interactive mode (simple commands can be typed directly to the running shell):
 ```bash
 $ ./hsh
