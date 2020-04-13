@@ -1,9 +1,10 @@
 # Simple Shell
-###  Simple replication of the command-line interpreter Shell
-Program that replicates core functionalities of the sh shell. All files are written in C language.   
+###  Simple replication of the command-line interpreter Shell
+Program that replicates core functionalities of the sh shell. All files are written in C language.
 
 ### Overview:
-The shell is a command that reads lines from either a file or the terminal, interprets them, and generally executes other commands.  It is the program that is running when a user logs into the system (although a user can select a different shell with the chsh(1) command).  The shell implements a language that has flow control constructs, a macro facility that provides a variety of features in addition to data storage, along with built in history and line editing capabilities. [dash(1) - Linux man page](https://linux.die.net/man/1/dash)
+The shell is a command that reads lines from either a file or the terminal, interprets them, and generally executes other commands.  It is the program that is running when a user logs into the system (although a user can select a different shell with the chsh(1) command).
+The shell implements a language that has flow control constructs, a macro facility that provides a variety of features in addition to data storage, along with built in history and line editing capabilities. [dash(1) - Linux man page](https://linux.die.net/man/1/dash)
 
 ### Compilation:
 Code files must be compiled this way:
@@ -57,12 +58,14 @@ $
 * [free (man 3 free)](https://linux.die.net/man/3/free)
 
 ### Libraries:
+
 [stdarg.h](https://en.wikipedia.org/wiki/Stdarg.h) | [signal.h](https://en.wikipedia.org/wiki/C_signal_handling) |
 [unistd.h](https://en.wikipedia.org/wiki/Unistd.h) | [sys/wait.h](https://pubs.opengroup.org/onlinepubs/009695399/basedefs/sys/wait.h.html) | [stdlib.h](https://es.wikipedia.org/wiki/Stdlib.h) | [sys/stat.h](https://pubs.opengroup.org/onlinepubs/007908799/xsh/sysstat.h.html)
 
 ### Files:
-| File  | Description |
-| :-------: | :-------:  |
+
+| File | Description |
+| :---: | :---: |
 | `simple_shell.h` | Libraries, declarations. |
 | `builtin.c` | Search and init built-ins |
 | `errormessages.c` | Messages Handlers |
@@ -76,7 +79,6 @@ $
 | `str_handlers.c` | String Handlers Funcs |
 | `hsh.c` | Main Function |
 
-
 ### Flowcharts:
 url flowcharts
 
@@ -84,5 +86,5 @@ url flowcharts
 * Maria Fernanda Crespo Martinez | [Github](https://github.com/mfcrespo)
 * Tatiana Orejuela Zapata | [Github](https://github.com/tatsOre)
 
-##### Holberton School - Foundations - Low-level programming & Algorithm  Linux and Unix system programming.
-#####  April, 2020. Cali, Colombia.
+##### Holberton School - Foundations - Low-level programming & Algorithm  Linux and Unix system programming.
+#####  April, 2020. Cali, Colombia.

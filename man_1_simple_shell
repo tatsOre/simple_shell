@@ -1,6 +1,6 @@
 .TH Simple Shell 1 "March 20" "version 1.0" "simple_shell man page"
 .SH NAME
-Name - TEXT prueba
+Name - TEXT prueba1
 .SH SYNOPSIS
 #include "simple_shell.h"
 command-line interpreter Shell
