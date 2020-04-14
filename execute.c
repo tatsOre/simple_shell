@@ -12,15 +12,13 @@ int execute(char **args)
 
 	child_pid = fork();
 
-	if (child_pid < 0)
-	{
-		perror("Error: ");
-		exit(EXIT_FAILURE);
-	}
 	if (child_pid == 0)
 	{
 		if (execve(args[0], args, environ) == -1)
-			exit(EXIT_FAILURE);
+		{
+			perror(args[0]);
+			exit(0);
+		}
 	}
 	else
 	{
@@ -28,12 +26,3 @@ int execute(char **args)
 	}
 	return (0);
 }
-
-/*
-{
-			if (errno == EACCES)
-			exit(126);
-			exit(EXIT_FAILURE);
-		}
-
-*/
