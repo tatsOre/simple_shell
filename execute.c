@@ -20,11 +20,7 @@ int execute(char **args)
 	if (child_pid == 0)
 	{
 		if (execve(args[0], args, environ) == -1)
-		{
-			if (errno == EACCES)
-			exit(126);
 			exit(EXIT_FAILURE);
-		}
 	}
 	else
 	{
@@ -32,3 +28,12 @@ int execute(char **args)
 	}
 	return (0);
 }
+
+/*
+{
+			if (errno == EACCES)
+			exit(126);
+			exit(EXIT_FAILURE);
+		}
+
+*/
