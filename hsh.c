@@ -28,7 +28,7 @@ int main(int argc, char **argv)
 		{
 			if (isatty(STDIN_FILENO))
 				write(STDOUT_FILENO, "\n", 1);
-			exit(EXIT_FAILURE);
+			exit(0);
 		}
 		args = get_tokens(buffer);
 		if (args != NULL && args[0] != NULL)
