@@ -2,7 +2,7 @@
 #define SIMPLE_SHELL_H
 
 #define BUFFSIZE 64
-#define DELIMITER " :\n\t\r"
+#define DELIMITER " \t\r\n\a"
 #define  _GNU_SOURCE
 
 #include <stdarg.h>
