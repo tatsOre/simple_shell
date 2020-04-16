@@ -15,11 +15,20 @@ int execute(char **args)
 	if (child_pid == 0)
 	{
 		if (execve(args[0], args, environ) == -1)
+<<<<<<< HEAD
 			exit(2);
+=======
+		{
+			perror(args[0]), free_function(2, args);
+			exit(2);
+		}
+>>>>>>> 3d914ea5533e5a7713ac557dd92c91e5a74d6077
 	}
 	else
 	{
 		wait(&status);
+		if (WIFEXITED(status) && status != 0)
+			exit(WEXITSTATUS(status));
 	}
-	return (0);
+	return (1);
 }

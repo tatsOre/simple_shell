@@ -35,21 +35,8 @@ int init_builtin(char **args, char *buffer)
   */
 int shb_exit(char **args, char *buffer)
 {
-	int status = 0;
-
-	if (args[1] != NULL)
-	{
-		status = _atoi(args[1]);
-	}
-	if (status == -1)
-	{
-		return (-1);
-	}
-	else
-	{
-		free_function(1, buffer), free_function(2, args);
-		exit(status);
-	}
+	free_function(1, buffer), free_function(2, args);
+	exit(0);
 }
 
 /**
