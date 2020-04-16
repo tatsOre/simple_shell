@@ -11,15 +11,18 @@ int execute(char **args)
 	int status;
 
 	child_pid = fork();
-
-	if (child_pid == 0)
+	if (child_pid < 0)
+		exit(1);
+	else if (child_pid == 0)
 	{
 		if (execve(args[0], args, environ) == -1)
-			exit(EXIT_FAILURE);
+			exit(127);
 	}
 	else
 	{
 		wait(&status);
+		if (WIFEXITED(status) && status != 0)
+			exit(WEXITSTATUS(status));
 	}
-	return (1);
+	return (0);
 }
