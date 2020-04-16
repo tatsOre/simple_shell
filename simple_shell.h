@@ -50,5 +50,6 @@ int countarg(char *buffer);
 char **get_tokens(char *buffer);
 void printfnum(int num);
 int _atoi(char *arg);
+int _isdigit(int c);
 
 #endif /* SIMPLE_SHELL_H */
