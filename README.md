@@ -74,7 +74,7 @@ $
 | `hsh.c` | Main Function |
 
 ### Flowcharts:
-url flowcharts1
+![Flowchart Simple Shell](https://user-images.githubusercontent.com/59972435/79511929-ec8bd400-8005-11ea-9361-c97aaccc0607.jpg)
 
 ### Authors:
 * Maria Fernanda Crespo Martinez | [Github](https://github.com/mfcrespo)
