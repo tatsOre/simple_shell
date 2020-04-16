@@ -1,6 +1,5 @@
 # Simple Shell
-###  Simple replication of the command-line interpreter Shell
-Program that replicates core functionalities of the sh shell. All files are written in C language.
+###  Simple replication of the command-line interpreter Shell. All files are written in C language.
 
 ### Overview:
 The shell is a command that reads lines from either a file or the terminal, interprets them, and generally executes other commands.  It is the program that is running when a user logs into the system (although a user can select a different shell with the chsh(1) command).
@@ -51,11 +50,6 @@ $
 * No more than 5 functions per file
 * All your header files should be include guarded
 * Use system calls only when you need to [why?](https://www.quora.com/Why-are-system-calls-expensive-in-operating-systems)
-
-### Functions and macros:
-* [write (man 2 write)](https://linux.die.net/man/2/write)
-* [malloc (man 3 malloc)](https://linux.die.net/man/3/malloc)
-* [free (man 3 free)](https://linux.die.net/man/3/free)
 
 ### Libraries:
 
