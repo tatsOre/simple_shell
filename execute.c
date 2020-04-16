@@ -16,8 +16,8 @@ int execute(char **args)
 	{
 		if (execve(args[0], args, environ) == -1)
 		{
-			perror(args[0]);
-			exit(0);
+			perror(args[0]), free_function(2, args);
+			exit(2);
 		}
 	}
 	else
