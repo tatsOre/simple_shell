@@ -47,14 +47,23 @@ void printfnum(int loops)
 }
 
 /**
- * _isdigit - checks to see if input is a number from 0-9
- * @c: input to check
- * Return: returns 0 if c is a digit, 1 else
+ * _isdigit - checks to see if input is a number
+ * @number: input to check
+ * Return: returns 1 if is digit
  */
-int _isdigit(int c)
+int _isdigit(char *number)
 {
-	if (c >= 48 && c <= 57)
+	int i = 0;
+
+	if (number == NULL)
 		return (0);
-	else
-		return (1);
+
+	while (number[i])
+	{
+		if (number[i] < 47 || number[i] > 57)
+			return (0);
+		i++;
+	}
+	return (1);
+
 }

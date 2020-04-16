@@ -42,23 +42,28 @@ int shb_exit(char **args, char *buffer, int loops)
 
 	if (args[1] != NULL)
 	{
-		if(_isdigit(args[1]) == 0)
+		if (_isdigit(args[1]))
+		{
 			status = _atoi(args[1]);
+			if (status > 255) /* Bigger values result to mod 256 */
+				status = status % 256;
+			if (status < 0)
+			{
+				sprintf(err, "./hsh: %d: %s: Illegal number %s\n"
+					, loops, args[0], args[1]);
+				write(STDERR_FILENO, &err, _strlen(err));
+				status = 2;
+			}
+		}
 		else
 		{
-			sprintf(err, "./hsh: %d: %s: Illegal number: %s\n", loops, args[0], args[1]);
-			write(STDERR_FILENO, &err, _strlen(err));
-			status = 2;
-		}
-		if (status > 255)
-			status = status % 256; /* Bigger values result to modulo 256 */
-                if (status < 0)
-		{
-			sprintf(err, "./hsh: %d: %s: Illegal number: %s\n", loops, args[0], args[1]);
+			sprintf(err, "./hsh: %d: %s: Illegal number: %s\n",
+				loops, args[0], args[1]);
 			write(STDERR_FILENO, &err, _strlen(err));
 			status = 2;
 		}
 	}
+
 	free_function(1, buffer), free_function(2, args);
 	exit(status);
 }

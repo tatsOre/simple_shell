@@ -34,7 +34,7 @@ int main(int argc, char **argv)
 		args = get_tokens(buffer);
 		if (args != NULL && args[0] != NULL)
 		{
-			if (init_builtin(args, buffer))
+			if (init_builtin(args, buffer, loops))
 				continue;
 
 			if (init_fileprogram(args) == -1)

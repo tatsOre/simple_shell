@@ -2,7 +2,7 @@
 #define SIMPLE_SHELL_H
 
 #define BUFFSIZE 64
-#define DELIMITER " \t\r\n"
+#define DELIMITER " \t\r\n\a"
 #define  _GNU_SOURCE
 
 #include <stdarg.h>
@@ -21,7 +21,7 @@
 extern char **environ;
 
 int init_fileprogram(char **args);
-int init_builtin(char **args, char *buffer);
+int init_builtin(char **args, char *buffer, int loops);
 int searchdir(char **command, char **args);
 int execute(char **args);
 
@@ -39,7 +39,7 @@ int getpathfile(char **args);
 
 /* Built-ins Functions */
 void shb_env(void);
-int shb_exit(char **args, char *buffer);
+int shb_exit(char **args, char *buffer, int loops);
 void shb_cd(char **args);
 
 /* Simple Shell Handlers */
@@ -50,6 +50,6 @@ int countarg(char *buffer);
 char **get_tokens(char *buffer);
 void printfnum(int num);
 int _atoi(char *arg);
-int _isdigit(int c);
+int _isdigit(char *number);
 
 #endif /* SIMPLE_SHELL_H */
