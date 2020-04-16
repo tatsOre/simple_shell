@@ -15,10 +15,7 @@ int execute(char **args)
 	if (child_pid == 0)
 	{
 		if (execve(args[0], args, environ) == -1)
-		{
-			perror(args[0]);
-			exit(0);
-		}
+			exit(2);
 	}
 	else
 	{
