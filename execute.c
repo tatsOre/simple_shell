@@ -17,12 +17,14 @@ int execute(char **args)
 		if (execve(args[0], args, environ) == -1)
 		{
 			perror(args[0]), free_function(2, args);
-			exit(2);
+			exit(127);
 		}
 	}
 	else
 	{
 		wait(&status);
+		if (WIFEXITED(status) && status != 0)
+			exit(WEXITSTATUS(status));
 	}
-	return (0);
+	return (1);
 }
