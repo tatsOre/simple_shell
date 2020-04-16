@@ -38,10 +38,7 @@ int main(int argc, char **argv)
 				continue;
 
 			if (init_fileprogram(args) == -1)
-			{
 				errmess(argv, args, loops);
-				return (127);
-			}
 		}
 		free_function(1, buffer);
 		free_function(2, args);
