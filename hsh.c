@@ -1,12 +1,12 @@
 #include "simple_shell.h"
 
 /**
-  * main - Creates a loop for to receive user call functions, parse the input
-  * and check program type to execute a program file if success
-  * @argc: number of command line arguments
-  * @argv: command line arguments
-  * Return: 0, success, otherwise errors
-  */
+ * main - Creates a loop for to receive user call functions, parse the input
+ * and check program type to execute a program file if success
+ * @argc: number of command line arguments
+ * @argv: command line arguments
+ * Return: 0, success, otherwise errors
+ */
 int main(int argc, char **argv)
 {
 	char *buffer, **args;
@@ -29,7 +29,7 @@ int main(int argc, char **argv)
 			if (isatty(STDIN_FILENO))
 				write(STDOUT_FILENO, "\n", 1);
 			free(buffer);
-			exit(0);
+			return (0);
 		}
 		args = get_tokens(buffer);
 		if (args != NULL && args[0] != NULL)
