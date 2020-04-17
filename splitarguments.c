@@ -14,8 +14,10 @@ char **get_tokens(char *buffer)
 	int index = 0;
 
 	if (buffer == NULL || token_list == NULL)
+	{
+		free_function(2, token_list);
 		return (NULL);
-
+	}
 	token = strtok(buffer, DELIMITER);
 
 	while (token != NULL)
