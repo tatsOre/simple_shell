@@ -74,7 +74,11 @@ $
 | `hsh.c` | Main Function |
 
 ### Flowcharts:
+<<<<<<< HEAD
 ![Flowchart](https://drive.google.com/open?id=1zAp6WFA6Acx2SbfE2dGTOl9tjFxOQZeX)
+=======
+![Flowchart Simple Shell](https://user-images.githubusercontent.com/59972435/79511929-ec8bd400-8005-11ea-9361-c97aaccc0607.jpg)
+>>>>>>> 0776f4e431ee7df555fc34714d5e35d01ed4578c
 
 ### Authors:
 * Maria Fernanda Crespo Martinez | [Github](https://github.com/mfcrespo)

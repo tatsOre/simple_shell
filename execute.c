@@ -25,4 +25,8 @@ int execute(char **args)
 			exit(WEXITSTATUS(status));
 	}
 	return (0);
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 0776f4e431ee7df555fc34714d5e35d01ed4578c
