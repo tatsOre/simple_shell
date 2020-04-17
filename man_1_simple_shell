@@ -1,57 +1,140 @@
-.TH Simple Shell 1 "March 20" "version 1.0" "simple_shell man page"
+.TH Simple Shell 1 "16 April 2020" "version 1.0" "simple_shell man page"
+
 .SH NAME
-Name - TEXT prueba1
+.B hsh
+- A simple command interpreter (simple_shell)
+
 .SH SYNOPSIS
-#include "simple_shell.h"
-command-line interpreter Shell
+.B ./hsh [options] [command_string | file]
 
 .SH DESCRIPTION
+.LP
+.B hsh
+is an sh-compatible command language interpreter that reads and executes commands
+from the standard input or from a file. It is conformed with the POSIX 1003.2 and 
+1003.2a specifications for the shell. This shell is based on the original UNIX shell. 
+It was developed with Ubuntu 14.04 LTS and compiled with GCC 5.4.1. This man page
+isn´t tutorial of the Shell, is a document is a document that supports the user 
+on some shell features.
+.LP
 
-.I
-.SS SUBTITLE FORMAT
-.RS
+.SH OVERVIEW
+The shell is a command that reads lines for either a file or the terminal,
+interprets them, and generally executes other commands.
 
-PARAGRAPH
+.SS Invocation
+.B hsh
+is invoked by the command:
+.br
+$./hsh
+.LP
+A prompt will appear for the user to enter and execute commands by typing 
+command names and pressing the return key. A user can also pipe commands into 
+the program via the pipe character '|'. For example:
+.br
+\&$ echo "hello world" | ./hsh
 
-.IP mini subtitle format
+.SH INSTALLATION
+.I To install:
+.br
 
-Paragraph
+.B git clone https://github.com/tatsOre/simple_shell.git
+.br
 
-.I
-.SS SUBTITLE FORMAT
-.RS
+.I Compile files using:
+.br
 
-.IP Mini Subtitle Format
+.B gcc -Wall -Werror -Wextra -pedantic *.c -o hsh
+.br
+.br
 
-Paragraph
+A prompt will appear for the user to enter and execute commands by typing 
+command names and pressing the return key. A user can also pipe commands 
+into the program via the pipe character '|'. For example:
+$ echo "hello world" | ./hsh
 
-.SH GRAND TITLE FORMAT
-.RS
+.SH BUILT-INS
+.PP
+init_builtin - Init built-in functions.
+.PP
+shb_exit - Function that exits the Simple Shell.
+.PP
+shb_env - Prints the global environment variable.
+.PP
+shb_cd - Change directory according argument.
+.PP
+sighandle - This program allows ctrl+C to be printed and new line with enter is pressed.
 
-Paragraph
-
-.SH EXAMPLES:
-.RS
+.SH EXAMPLES
+.PP
+1. List files in alphabetical order:
+.PP
+$ ./hsh
+.br
+$ ls -l
+.br
+total 196
+.br
+-rw-rw-r-- 1 vagrant vagrant    233 Apr 17 04:09 AUTHORS
+.br
+-rwxrwxrwx 1 vagrant vagrant    365 Apr 14 01:03 authors.sh
+.br
+-rw-rw-r-- 1 vagrant vagrant   2546 Apr 17 05:03 builtin.c
+.br
+-rwxrwxr-x 1 vagrant vagrant   8574 Apr 16 20:16 env
+.br
+-rw-rw-r-- 1 vagrant vagrant   1306 Apr 16 20:16 errormessages.c
+.br
+-rw-rw-r-- 1 vagrant vagrant    501 Apr 17 04:25 execute.c
+.br
+-rw-rw-r-- 1 vagrant vagrant    559 Apr 16 19:46 freeall.c
+.br
+-rw-rw-r-- 1 vagrant vagrant    409 Apr 13 20:58 getenv.c
+.br
+-rwxrwxr-x 1 vagrant vagrant 111499 Apr 17 05:07 hsh
+.br
+-rw-rw-r-- 1 vagrant vagrant    972 Apr 17 04:14 hsh.c
+.br
+-rw-rw-r-- 1 vagrant vagrant   3084 Apr 17 05:49 man_1_simple_shell
+.br
+-rw-rw-r-- 1 vagrant vagrant    824 Apr 13 21:00 pathappend.c
+.br
+-rw-rw-r-- 1 vagrant vagrant   3679 Apr 17 04:25 README.md
+.br
+-rw-rw-r-- 1 vagrant vagrant   1264 Apr 13 20:06 searchinit.c
+.br
+-rw-rw-r-- 1 vagrant vagrant    961 Apr 13 20:07 searchpathfile.c
+.br
+-rw-rw-r-- 1 vagrant vagrant   1271 Apr 16 20:16 simple_shell.h
+.br
+-rw-rw-r-- 1 vagrant vagrant   1300 Apr 17 03:57 splitarguments.c
+.br
+-rw-rw-r-- 1 vagrant vagrant   2160 Apr 13 22:43 str_handlers.c
+.br
+-rw------- 1 vagrant vagrant   5098 Apr 17 05:08 valgrind-out.txt
+.SS
 .SS --------------
-.I
-.SS Example 0
-.RS
-.SS --------------
-.SS Input         _printf("This is a char: [%c]", 'C');
-.SS Output	     This is a char: [C]
-.SS --------------
-.I
-.SS Example 1
-.RS
-.SS --------------
-.SS Input	 _printf("Let's try to printf a simple sentence");
-.SS Output	   Let's try to printf a simple sentence
-.SS --------------
-.RE
+.SS
+.SS
+2. print the current working directory and set a new line that waits for the next command:
+.PP
+$ ./hsh
+.br
+$ pwd
+/home/vagrant/simple_shell
+$
 
 .SH SEE ALSO
-.I man sh
+bash(1)
+
+.SH HISTORY
+.B hsh
+is based on the Thompson Shell program written by Ken Thompson.
+
 .SH BUGS
-Report bugs to Maria Fernanda Crespo Martinez (maria.crespo@holbertonschool.com) or Tatiana Orejuela (tatiana.orejuela@holbertonschool.com)
+No known bugs. If any further bugs are found 
+please contact the authors.
+
 .SH AUTHORS
 Maria Fernanda Crespo Martinez, Tatiana Orejuela.
+
