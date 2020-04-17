@@ -15,7 +15,7 @@ int init_builtin(char **args, char *buffer, int loops)
 		free_function(1, buffer), free_function(2, args);
 		return (1);
 	}
-	else if (_strcmp(args[0], "exit") == 0)
+	else if (_strcmp(buffer, "exit") == 0)
 		shb_exit(args, buffer, loops);
 
 	else if (_strcmp(args[0], "cd") == 0)
